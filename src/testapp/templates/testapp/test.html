@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My_app_page</title>
+</head>
+<body>
+    {{ now }}
+    <h1>!!!!!!Hello World!!!(from Django)</h1>
+    <h2>Some_value is : {{ some_value }}</h2>
+    <h2>Курс равен: {{ rate }}</h2>
+
+    <ul>
+        {% for element in my_data %}
+        <li>The element from my_data is: {{ element }}</li>
+        {% endfor %}
+    </ul>
+
+    {{ my_data }}
+</body>
+</html>
