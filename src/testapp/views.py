@@ -3,6 +3,8 @@ from django.http import HttpResponse
 import random
 import requests
 import datetime
+from .models import Genre
+from .models import Book
 # Create your views here.
 
 def test(request):
@@ -14,5 +16,9 @@ def test(request):
 
     date = datetime.datetime.now()
 
-    context = {'some_value': r, 'rate': rate, 'my_data': data, 'now': date}
+    # get One OBJ from Genere:
+    genre = Genre.objects.all()
+    book = Book.objects.all()
+
+    context = {'some_value': r, 'rate': rate, 'my_data': data, 'now': date, 'genre':genre, 'book': book}
     return render(request, template_name='testapp/test.html', context=context)
