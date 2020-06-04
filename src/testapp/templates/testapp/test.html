@@ -7,16 +7,37 @@
 </head>
 <body>
     {{ now }}
-    <h1>!!!!!!Hello World!!!(from Django)</h1>
-    <h2>Some_value is : {{ some_value }}</h2>
-    <h2>Курс равен: {{ rate }}</h2>
-    <h2>{{ book.name }} + {{ genre.name }}</h2> #связки с датабазой
-    <ul>
-        {% for element in my_data %}
-        <li>The element from my_data is: {{ element }}</li>
-        {% endfor %}
-    </ul>
+     <h1>GENRE</h1>
+     <table border = '1px'>
+     <tr>
+     <th>pk</th><th>name</th><th>description</th>
+     </tr> 
+     {% for genre in genre  %}
+        <tr>
+            <td>{{genre.pk}}</td><td>{{genre.name}}</td><td>{{genre.description}}</td>
+        </tr>
+     {% endfor %}
+     
+     </table>
 
-    {{ my_data }}
+     <h1>BOOK</h1>
+     <table border = '1px'>
+     <tr>
+     <th>pk</th><th>name</th><th>description</th><th>genre</th><th>created</th><th>updated</th>
+     </tr> 
+     {% for book in book  %}
+        <tr>
+            <td>{{book.pk}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.description}}</td>
+            <td>{{book.genre}}</td>
+            <td>{{book.created}}</td>
+            <td>{{book.updated}}</td>
+        </tr>
+     {% endfor %}
+     
+     </table>
+
+    
 </body>
 </html>
